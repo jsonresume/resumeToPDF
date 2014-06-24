@@ -1,6 +1,6 @@
 {
     "name": "resume-to-pdf",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "resumeToPDF",
     "main": "index.js",
     "scripts": {
@@ -18,6 +18,6 @@
     "homepage": "https://github.com/jsonresume/resumeToPDF",
     "dependencies": {
         "html5-to-pdf": "^0.2.2",
-        "resume-to-html": "0.0.4"
+        "resume-to-html": "latest"
     }
 }
