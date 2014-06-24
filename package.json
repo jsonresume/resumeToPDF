@@ -1,6 +1,6 @@
 {
     "name": "resume-to-pdf",
-    "version": "0.0.4",
+    "version": "0.0.8",
     "description": "resumeToPDF",
     "main": "index.js",
     "scripts": {
