@@ -1,17 +1,17 @@
-var html5pdf = require("html5-to-pdf");
-var resumeToHtml = require('resume-to-html');
 var fs = require('fs');
+var pdf = require('html-pdf');
+var resumeToHtml = require('resume-to-html');
 
-function resumeToPDF(resumeJson, fileName, callback) {
-
+function resumeToPDF(resumeJson, callback) {
     resumeToHtml(resumeJson, function(htmlResume) {
+        pdf.create(htmlResume, {
+            width: '50mm',
+            height: '90mm'
+        }, function(err, buffer) {
+            callback(err, buffer);
+        });
 
-        fs.writeFileSync('resume.html', htmlResume, 'utf8');
-        html5pdf().from('resume.html').to(process.cwd() + '/' + fileName, function() {
-
-            callback(true);
-        })
     });
-}
+};
 
 module.exports = resumeToPDF;

@@ -6,10 +6,9 @@ var resumeJson = {
     "email": "test@test"
 }
 
-
 test('Test converter on resume.json.', function(t) {
-    resumeToPDF(resumeJson, 'test.pdf', function(res) {
+    resumeToPDF(resumeJson, function(err, buffer) {
         t.plan(1);
-        t.ok(res, 'no error');
+        t.notOk(err, 'no error');
     });
 });
