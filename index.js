@@ -7,6 +7,7 @@ function resumeToPDF(resumeJson, callback) {
     // add css into html as:
     // https://github.com/marcbachmann/node-html-pdf/blob/master/test/businesscard.html
     resumeToHtml(resumeJson, {}, function(htmlResume) {
+    	console.log(htmlResume);
         pdf.create(htmlResume, {
             // A4 size? what is that?
             width: '297mm',
