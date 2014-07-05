@@ -10,5 +10,6 @@ test('Test converter on resume.json.', function(t) {
     //    t.plan(1);
     //   t.notOk(err, 'no error');
     //});
+	t.plan(1);
 	t.pass('good');
 });
