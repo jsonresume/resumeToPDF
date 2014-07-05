@@ -1,17 +1,21 @@
-var html5pdf = require("html5-to-pdf");
-var resumeToHtml = require('resume-to-html');
 var fs = require('fs');
+var pdf = require('html-pdf');
+var resumeToHtml = require('resume-to-html');
 
-function resumeToPDF(resumeData, fileName, callback) {
 
-    resumeToHtml(resumeData, {}, function(htmlResume) {
+function resumeToPDF(resumeJson, callback) {
+    // add css into html as:
+    // https://github.com/marcbachmann/node-html-pdf/blob/master/test/businesscard.html
+    resumeToHtml(resumeJson, {}, function(htmlResume) {
+        pdf.create(htmlResume, {
+            // A4 size? what is that?
+            width: '297mm',
+            height: '400mm'
+        }, function(err, buffer) {
+            callback(err, buffer);
+        });
 
-        fs.writeFileSync('resume.html', htmlResume, 'utf8');
-        html5pdf().from('resume.html').to(process.cwd() + '/' + fileName, function() {
-
-            callback(true);
-        })
     });
-}
+};
 
 module.exports = resumeToPDF;
