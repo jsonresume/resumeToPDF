@@ -17,11 +17,11 @@
     },
     "homepage": "https://github.com/jsonresume/resumeToPDF",
     "dependencies": {
-        "html-pdf": "^0.1.3",
-        "resume-to-html": "0.0.11"
+        "html-pdf": "^1.4.0",
+        "resume-to-html": "0.0.21"
     },
     "devDependencies": {
-        "tap-spec": "^0.2.0",
-        "tape": "^2.13.3"
+        "tap-spec": "^4.1.0",
+        "tape": "^4.2.2"
     }
 }
