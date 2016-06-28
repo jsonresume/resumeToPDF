@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/jsonresume/resumeToPDF",
   "dependencies": {
-    "html-pdf": "^1.4.0",
+    "html-pdf": "^2.0.1",
     "resume-to-html": "0.0.21"
   },
   "devDependencies": {
