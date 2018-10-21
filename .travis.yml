@@ -3,6 +3,8 @@ node_js:
  - "0.10"
  - "0.12"
  - "4"
+ - 8
+ - 10
 sudo: false
 git:
   depth: 5
