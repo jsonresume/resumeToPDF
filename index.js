@@ -1,21 +1,15 @@
-var fs = require('fs');
-var pdf = require('html-pdf');
-var resumeToHtml = require('resume-to-html');
+import fs from 'fs';
+import pdf from 'html-pdf';
+import resumeToHtml from 'resume-to-html';
 
-
-function resumeToPDF(resumeJson, callback) {
+export const resumeToPDF = (resumeJson, callback) => {
     // add css into html as:
     // https://github.com/marcbachmann/node-html-pdf/blob/master/test/businesscard.html
-    resumeToHtml(resumeJson, {}, function(htmlResume) {
+    resumeToHtml(resumeJson, {}, htmlResume => {
         pdf.create(htmlResume, {
             // A4 size? what is that?
             width: '297mm',
             height: '400mm'
-        }, function(err, buffer) {
-            callback(err, buffer);
-        });
-
+        }, (err, buffer) => callback(err, buffer));
     });
 };
-
-module.exports = resumeToPDF;
