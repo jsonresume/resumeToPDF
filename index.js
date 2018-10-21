@@ -1,6 +1,6 @@
-import fs from 'fs';
-import pdf from 'html-pdf';
-import resumeToHtml from 'resume-to-html';
+import {fs} from 'fs';
+import {pdf} from 'html-pdf';
+import {resumeToHtml} from 'resume-to-html';
 
 export const resumeToPDF = (resumeJson, callback) => {
     // add css into html as:
